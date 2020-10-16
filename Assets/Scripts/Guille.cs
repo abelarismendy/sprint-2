@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Guille : MonoBehaviour
 {
+    public float velocidad;
     // Start is called before the first frame update
     void Start()
     {
@@ -11,7 +12,7 @@ public class Guille : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         
     }
