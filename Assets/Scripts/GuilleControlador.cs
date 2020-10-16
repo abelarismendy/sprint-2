@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Guille : MonoBehaviour
+public class GuilleControlador : MonoBehaviour
 {
     public float velocidad;
     // Start is called before the first frame update
