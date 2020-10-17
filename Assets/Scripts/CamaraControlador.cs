@@ -17,8 +17,7 @@ public class CamaraControlador : MonoBehaviour
     {
         if (guille.transform.position.x >= 0)
         {
-            Vector3 nuevaPos = guille.transform.position + diferencia;
-            transform.position = nuevaPos;
+            transform.position = new Vector3(guille.transform.position.x, transform.position.y, transform.position.z);
         }
         
     }

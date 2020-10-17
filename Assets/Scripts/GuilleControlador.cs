@@ -55,7 +55,7 @@ public class GuilleControlador : MonoBehaviour
             sobrePiso = true;
         }
 
-        if (transform.position.z < -0.4 || transform.position.z > 0.4)
+        if (transform.position.z < -0.3 || transform.position.z > 0.3)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, 0.0f);
         }
