@@ -15,7 +15,11 @@ public class CamaraControlador : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        Vector3 nuevaPos = guille.transform.position + diferencia;
-        transform.position = nuevaPos;
+        if (guille.transform.position.x >= 0)
+        {
+            Vector3 nuevaPos = guille.transform.position + diferencia;
+            transform.position = nuevaPos;
+        }
+        
     }
 }
