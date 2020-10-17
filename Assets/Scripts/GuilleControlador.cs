@@ -35,22 +35,29 @@ public class GuilleControlador : MonoBehaviour
         {
             transform.rotation = Quaternion.LookRotation(Vector3.left, Vector3.up);
             transform.position += Vector3.left * velocidad * Time.deltaTime;
-            
+
             if (sobrePiso)
             {
                 transform.rotation = Quaternion.Euler(0.0f,Mathf.PingPong(Time.time * 50, rotacion*2)-100, 0.0f);
             }
         }
 
-        if (Input.GetButtonDown("Jump") && sobrePiso) {
+        if (Input.GetButtonDown("Jump") && sobrePiso)
+        {
             rb.AddForce(Vector3.up*salto, ForceMode.Impulse);
             sobrePiso = false;
         }
     }
 
     private void OnCollisionEnter(Collision otro) {
-        if (otro.gameObject.tag == "Piso") {
+        if (otro.gameObject.tag == "Piso")
+        {
             sobrePiso = true;
+        }
+
+        if (transform.position.z < -0.4 || transform.position.z > 0.4)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, 0.0f);
         }
     }
 }
