@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,12 +20,13 @@ public class GuilleControlador : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+
         if (Input.GetKey("right"))
         {
             transform.rotation = Quaternion.LookRotation(Vector3.right, Vector3.up);
             transform.position += Vector3.right * velocidad * Time.deltaTime;
 
-            if (sobrePiso)
+            if (sobrePiso) 
             {
                 transform.rotation = Quaternion.Euler(0.0f,Mathf.PingPong(Time.time * 50, rotacion*2)-280, 0.0f);
             }
@@ -55,10 +56,10 @@ public class GuilleControlador : MonoBehaviour
             sobrePiso = true;
         }
 
-        if (transform.position.z < -0.3 || transform.position.z > 0.3)
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y, 0.0f);
-        }
+        // if (transform.position.z < -0.3 || transform.position.z > 0.3)
+        // {
+        //     transform.position = new Vector3(transform.position.x, transform.position.y, 0.0f);
+        // }
     }
 }
  
