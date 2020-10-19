@@ -16,4 +16,11 @@ public class Insectos : MonoBehaviour
         transform.Rotate(0, 0, rotationSpeed  *Time.deltaTime);
         
     }
+     private void OntriggerEnter (Collider other)
+     {
+        if(other.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
+     }
 }
