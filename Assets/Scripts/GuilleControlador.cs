@@ -10,6 +10,10 @@ public class GuilleControlador : MonoBehaviour
     public bool sobrePiso = true;
 
     private Rigidbody rb;
+    public void OnTriggerEnter(Collider other)
+    {
+        Destroy(other.gameObject);
+    }
 
     // Start is called before the first frame update
     void Start()
