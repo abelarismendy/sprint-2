@@ -1,6 +1,9 @@
 ﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
+
 
 public class GuilleControlador : MonoBehaviour
 {
@@ -8,17 +11,31 @@ public class GuilleControlador : MonoBehaviour
     public float rotacion;
     public float salto;
     public bool sobrePiso = true;
+    int contador;
 
     private Rigidbody rb;
+    public Text bugs;
+        public void Awake()
+    {
+        contador = 0;
+        bugs.text= "BUGS: "+ contador;
+
+    }
+    
     public void OnTriggerEnter(Collider other)
     {
         Destroy(other.gameObject);
+        contador=contador+1;
+        bugs.text= "BUGS: "+ contador;
+    
     }
+
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        
     }
 
     // Update is called once per frame
