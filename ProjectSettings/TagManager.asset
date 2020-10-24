@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Piso
   - Bugs
+  - Volador
   layers:
   - Default
   - TransparentFX

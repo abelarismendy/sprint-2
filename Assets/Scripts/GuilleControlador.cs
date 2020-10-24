@@ -24,9 +24,11 @@ public class GuilleControlador : MonoBehaviour
     
     public void OnTriggerEnter(Collider other)
     {
-        Destroy(other.gameObject);
-        contador=contador+1;
-        bugs.text= "BUGS: "+ contador;
+        if(other.gameObject.CompareTag("Bugs")){
+            other.gameObject.SetActive(false);
+            contador=contador+1;
+            bugs.text= "BUGS: "+ contador;
+        }
     
     }
 
