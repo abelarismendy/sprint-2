@@ -11,6 +11,9 @@ public class GuilleControlador : MonoBehaviour
     public float salto;
     public bool sobrePiso = true;
     public int contador;
+    public int totalBugs;
+    public GameObject ganar;
+    public GameObject[] insectos;
     private Rigidbody rb;
     public Text bugs;
 
@@ -30,10 +33,39 @@ public class GuilleControlador : MonoBehaviour
         }
         if(other.gameObject.CompareTag("malo")){
             rb.gameObject.SetActive(false);
+            TerminarJuego(false ,contador);
+        }
+        if(other.gameObject.CompareTag("ganar")){
+            TerminarJuego(true, contador);
         }
     }
 
+    public void TerminarJuego(bool gano, int puntos){
+        if (gano){
+            print("ganaste!!!!");
+            print(puntos);
+            ReiniciarJuego();
+        }
+        else {
+            print("perdiste!!!!");
+            print(puntos);
+            ReiniciarJuego();
+        }
 
+    }
+
+    public void ReiniciarJuego(){
+        contador = 0;
+        bugs.text= "BUGS: "+ contador;
+        rb.gameObject.SetActive(true);
+        transform.position = new Vector3(0.0f, transform.position.y, transform.position.z);
+        ganar.SetActive(false);
+        foreach (GameObject insecto in insectos)
+        {
+            insecto.SetActive(true);
+        }
+        print("reiniciar");
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -71,6 +103,11 @@ public class GuilleControlador : MonoBehaviour
         }
     }
 
+    void LateUpdate(){
+        if (contador == totalBugs){
+            ganar.SetActive(true);
+        }
+    }
     private void OnCollisionEnter(Collision otro) {
         if (otro.gameObject.tag == "Piso")
         {
