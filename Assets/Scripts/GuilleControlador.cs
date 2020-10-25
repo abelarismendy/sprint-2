@@ -45,11 +45,14 @@ public class GuilleControlador : MonoBehaviour
             print("ganaste!!!!");
             print(puntos);
             ReiniciarJuego();
+            // SCRIPT CUANDO GANA AQUI.
         }
         else {
             print("perdiste!!!!");
             print(puntos);
             ReiniciarJuego();
+            // SCRIPT CUANDO PIERDE AQUI. EJECUTAR LA FUNCION REINICIAR JUEGO CUANDO PULSE EL BOTON
+
         }
 
     }
