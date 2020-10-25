@@ -49,6 +49,9 @@ public class GuilleControlador : MonoBehaviour
             // transform.rotation = Quaternion.LookRotation(Vector3.right, Vector3.up);
             rb.rotation = Quaternion.Euler(0.0f,90.0f, 0.0f);
             transform.position += Vector3.right * velocidad * Time.deltaTime;
+            if (sobrePiso){
+    	        transform.rotation = Quaternion.Euler(0.0f,Mathf.PingPong(Time.time * 50, rotacion*2)-280, 0.0f);
+            }
         }
 
         if (Input.GetKey("left"))
@@ -56,6 +59,9 @@ public class GuilleControlador : MonoBehaviour
             // transform.rotation = Quaternion.LookRotation(Vector3.left, Vector3.up);
             rb.rotation = Quaternion.Euler(0.0f, 270.0f, 0.0f);
             transform.position += Vector3.left * velocidad * Time.deltaTime;
+            if (sobrePiso){
+    	        transform.rotation = Quaternion.Euler(0.0f,Mathf.PingPong(Time.time * 50, rotacion*2)-100, 0.0f);
+            }
         }
 
         if (Input.GetButtonDown("Jump") && sobrePiso)
