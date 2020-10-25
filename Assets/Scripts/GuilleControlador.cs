@@ -28,6 +28,9 @@ public class GuilleControlador : MonoBehaviour
             contador=contador+1;
             bugs.text= "BUGS: "+ contador;
         }
+        if(other.gameObject.CompareTag("malo")){
+            rb.gameObject.SetActive(false);
+        }
     }
 
 

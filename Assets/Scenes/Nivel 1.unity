@@ -1104,11 +1104,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100114, guid: 7b12ff0838c1bfc46970414ffe81e813, type: 3}
       propertyPath: m_TagString
-      value: Bugs
+      value: malo
       objectReference: {fileID: 0}
     - target: {fileID: 400114, guid: 7b12ff0838c1bfc46970414ffe81e813, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -55.8276
+      value: -58.49
       objectReference: {fileID: 0}
     - target: {fileID: 400114, guid: 7b12ff0838c1bfc46970414ffe81e813, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9272,11 +9272,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100114, guid: 7b12ff0838c1bfc46970414ffe81e813, type: 3}
       propertyPath: m_TagString
-      value: Bugs
+      value: malo
       objectReference: {fileID: 0}
     - target: {fileID: 400114, guid: 7b12ff0838c1bfc46970414ffe81e813, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -47.3976
+      value: -43.11
       objectReference: {fileID: 0}
     - target: {fileID: 400114, guid: 7b12ff0838c1bfc46970414ffe81e813, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9454,7 +9454,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
-  m_LocalPosition: {x: 0, y: 7, z: -9}
+  m_LocalPosition: {x: 0, y: 7, z: -8.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -9628,6 +9628,10 @@ PrefabInstance:
       propertyPath: bugs
       value: 
       objectReference: {fileID: 1758157860}
+    - target: {fileID: 1174464552, guid: 42a0966e4138f4c46bb32cb9692b98ab, type: 3}
+      propertyPath: salto
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1174464554, guid: 42a0966e4138f4c46bb32cb9692b98ab, type: 3}
       propertyPath: m_Constraints
       value: 88
@@ -14234,11 +14238,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100114, guid: 7b12ff0838c1bfc46970414ffe81e813, type: 3}
       propertyPath: m_TagString
-      value: Bugs
+      value: malo
       objectReference: {fileID: 0}
     - target: {fileID: 400114, guid: 7b12ff0838c1bfc46970414ffe81e813, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -51.5876
+      value: -50.42
       objectReference: {fileID: 0}
     - target: {fileID: 400114, guid: 7b12ff0838c1bfc46970414ffe81e813, type: 3}
       propertyPath: m_LocalPosition.y
