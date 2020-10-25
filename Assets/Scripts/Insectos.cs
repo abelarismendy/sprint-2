@@ -6,20 +6,21 @@ public class Insectos : MonoBehaviour
 {
     public float velocidad;
     public float rango;
-    public float rotacionY;
+    public float rotacionX;
+    public bool volador;
     private bool adelante;
-    private float IniPos;
+    private Vector3 IniPos;
     private float diferencia;
     void Start()
     {
-        IniPos = transform.position.x;
+        IniPos = transform.position;
         adelante = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        diferencia = transform.position.x - IniPos;
+        diferencia = transform.position.x - IniPos.x;
         if (adelante){
             transform.position = new Vector3((transform.position.x + velocidad * Time.deltaTime), transform.position.y, transform.position.z );
             // transform.position.z += velocidad * Time.time;
@@ -30,15 +31,19 @@ public class Insectos : MonoBehaviour
         }
 
         if (diferencia >= rango){
-            transform.rotation = Quaternion.Euler(rotacionY, 270.0f, transform.rotation.z);
-            // transform.rotation = Quaternion.Euler(0.0f,Mathf.PingPong(Time.time * 50, rotacion*2)-280, 0.0f);
+            transform.rotation = Quaternion.Euler(rotacionX, 270.0f, transform.rotation.z);
             adelante = false;
+            // transform.rotation = Quaternion.Euler(0.0f,Mathf.PingPong(Time.time * 50, rotacion*2)-280, 0.0f);
         }
 
         if (diferencia <= -rango){
-            transform.rotation = Quaternion.Euler(rotacionY, 90.0f, transform.rotation.z);
-            // transform.rotation = Quaternion.Euler(0.0f,Mathf.PingPong(Time.time * 50, rotacion*2)-100, 0.0f);
+            transform.rotation = Quaternion.Euler(rotacionX, 90.0f, transform.rotation.z);
             adelante = true;
+            // transform.rotation = Quaternion.Euler(0.0f,Mathf.PingPong(Time.time * 50, rotacion*2)-100, 0.0f);
+        }
+
+        if(volador) {
+            transform.position = new Vector3(transform.position.x, Mathf.PingPong(Time.time * velocidad, rango) + IniPos.y, transform.position.z);
         }
     }
 }
