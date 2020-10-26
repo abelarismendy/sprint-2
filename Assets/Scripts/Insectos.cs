@@ -24,10 +24,12 @@ public class Insectos : MonoBehaviour
         if (adelante){
             transform.position = new Vector3((transform.position.x + velocidad * Time.deltaTime), transform.position.y, transform.position.z );
             // transform.position.z += velocidad * Time.time;
+            transform.rotation = Quaternion.Euler(90.0f,Mathf.PingPong(Time.time * 50, 30)-280, 0.0f);
         }
 
         else {
             transform.position = new Vector3((transform.position.x - velocidad * Time.deltaTime), transform.position.y, transform.position.z );
+            transform.rotation = Quaternion.Euler(90.0f,Mathf.PingPong(Time.time * 50, 30)+280, 0.0f);
         }
 
         if (diferencia >= rango){
