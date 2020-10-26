@@ -10,18 +10,21 @@ public class GuilleControlador : MonoBehaviour
     public float rotacion;
     public float salto;
     public bool sobrePiso = true;
-    public int contador;
     public int totalBugs;
     public GameObject ganar;
     public GameObject[] insectos;
+    private int contador;
     private Rigidbody rb;
     public Text bugs;
 
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
     public void Awake()
     {
         contador = 0;
         bugs.text= "BUGS: "+ contador;
-
     }
 
     public void OnTriggerEnter(Collider other)
@@ -70,10 +73,6 @@ public class GuilleControlador : MonoBehaviour
         print("reiniciar");
     }
     // Start is called before the first frame update
-    void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
 
     // Update is called once per frame
     void FixedUpdate()
