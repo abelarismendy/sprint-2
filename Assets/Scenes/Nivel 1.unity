@@ -4492,7 +4492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c3e4aadf86a8c24e9d2265b1e5d1742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 1
+  velocidad: 0.5
   rango: 2
   rotacionX: 0
   volador: 0
@@ -11058,7 +11058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c3e4aadf86a8c24e9d2265b1e5d1742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 1
+  velocidad: 0.3
   rango: 2
   rotacionX: 0
   volador: 0
