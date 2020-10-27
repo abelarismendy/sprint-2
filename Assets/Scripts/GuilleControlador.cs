@@ -19,7 +19,7 @@ public class GuilleControlador : MonoBehaviour
     private Vector3 posInicial;
     public Text bugs;
 
-    public GameObject panel;
+    public GameObject GameFinished;
     public GameObject GameOver;
     private bool choque;
 
@@ -28,10 +28,16 @@ public class GuilleControlador : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         posInicial = transform.position;
         avispa = GameObject.Find("wasp").GetComponent<Avispa1>();
-        panel.SetActive(false);
+        GameOver.SetActive(false);
         GameObject restart = GameOver.transform.GetChild(1).gameObject;
-        Button btn = restart.GetComponent<Button>();
-		btn.onClick.AddListener(ReiniciarJuego);
+        Button btnRestart = restart.GetComponent<Button>();
+		btnRestart.onClick.AddListener(ReiniciarJuego);
+        GameObject restart2 = GameFinished.transform.GetChild(1).gameObject;
+        Button btnRestart2 = restart2.GetComponent<Button>();
+		btnRestart2.onClick.AddListener(ReiniciarJuego);
+        GameObject finish = GameFinished.transform.GetChild(2).gameObject;
+        Button btnFinish = finish.GetComponent<Button>();
+        btnFinish.onClick.AddListener(SalirAlMenu);
 
     }
     public void Awake()
@@ -49,27 +55,26 @@ public class GuilleControlador : MonoBehaviour
         }
         if(other.gameObject.CompareTag("malo")){
             rb.gameObject.SetActive(false);
-            panel.SetActive(true);
-            TerminarJuego(false ,contador);
+            TerminarJuego(false);
         }
         if(other.gameObject.CompareTag("ganar")){
-            TerminarJuego(true, contador);
+            rb.gameObject.SetActive(false);
+            TerminarJuego(true);
         }
     }
 
-    public void TerminarJuego(bool gano, int puntos){
+    public void TerminarJuego(bool gano){
         if (gano){
-            print("ganaste!!!!");
-            print(puntos);
-            ReiniciarJuego();
-            // SCRIPT CUANDO GANA AQUI.
+            GameFinished.SetActive(true);
         }
         else {
-            print("perdiste!!!!");
-            print(puntos);
             GameOver.SetActive(true);
         }
 
+    }
+
+    public void SalirAlMenu(){
+        print("menu");
     }
 
     public void ReiniciarJuego(){
@@ -84,6 +89,7 @@ public class GuilleControlador : MonoBehaviour
             insecto.SetActive(true);
         }
         GameOver.SetActive(false);
+        GameFinished.SetActive(false);
         print("reiniciar");
     }
     // Start is called before the first frame update
