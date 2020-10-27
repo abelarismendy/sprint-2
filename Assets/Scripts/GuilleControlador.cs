@@ -9,11 +9,9 @@ public class GuilleControlador : MonoBehaviour
     public float velocidad;
     public float rotacion;
     public float salto;
-    public bool sobrePiso = true;
+    public bool sobrePiso;
     public int totalBugs;
     public GameObject ganar;
-    
-    
     public GameObject[] insectos;
     Avispa1 avispa;
     private int contador;
@@ -22,6 +20,8 @@ public class GuilleControlador : MonoBehaviour
     public Text bugs;
 
     public GameObject panel;
+    public GameObject GameOver;
+    private bool choque;
 
     void Start()
     {
@@ -29,6 +29,10 @@ public class GuilleControlador : MonoBehaviour
         posInicial = transform.position;
         avispa = GameObject.Find("wasp").GetComponent<Avispa1>();
         panel.SetActive(false);
+        GameObject restart = GameOver.transform.GetChild(1).gameObject;
+        Button btn = restart.GetComponent<Button>();
+		btn.onClick.AddListener(ReiniciarJuego);
+
     }
     public void Awake()
     {
@@ -63,9 +67,7 @@ public class GuilleControlador : MonoBehaviour
         else {
             print("perdiste!!!!");
             print(puntos);
-            ReiniciarJuego();
-            // SCRIPT CUANDO PIERDE AQUI. EJECUTAR LA FUNCION REINICIAR JUEGO CUANDO PULSE EL BOTON
-
+            GameOver.SetActive(true);
         }
 
     }
@@ -81,6 +83,7 @@ public class GuilleControlador : MonoBehaviour
         {
             insecto.SetActive(true);
         }
+        GameOver.SetActive(false);
         print("reiniciar");
     }
     // Start is called before the first frame update
@@ -94,7 +97,7 @@ public class GuilleControlador : MonoBehaviour
             // transform.rotation = Quaternion.LookRotation(Vector3.right, Vector3.up);
             rb.rotation = Quaternion.Euler(0.0f,90.0f, 0.0f);
             transform.position += Vector3.right * velocidad * Time.deltaTime;
-            if (sobrePiso){
+            if (sobrePiso && !choque){
     	        transform.rotation = Quaternion.Euler(0.0f,Mathf.PingPong(Time.time * 50, rotacion*2)-280, 0.0f);
             }
         }
@@ -104,7 +107,7 @@ public class GuilleControlador : MonoBehaviour
             // transform.rotation = Quaternion.LookRotation(Vector3.left, Vector3.up);
             rb.rotation = Quaternion.Euler(0.0f, 270.0f, 0.0f);
             transform.position += Vector3.left * velocidad * Time.deltaTime;
-            if (sobrePiso){
+            if (sobrePiso && !choque){
     	        transform.rotation = Quaternion.Euler(0.0f,Mathf.PingPong(Time.time * 50, rotacion*2)-100, 0.0f);
             }
         }
@@ -129,5 +132,12 @@ public class GuilleControlador : MonoBehaviour
         {
             sobrePiso = true;
         }
+
+        else {
+            choque = true;
+        }
+    }
+    private void OnCollisionExit() {
+        choque = false;
     }
 }
