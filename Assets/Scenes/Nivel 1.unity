@@ -10402,6 +10402,10 @@ PrefabInstance:
       propertyPath: rotacion
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 1174464552, guid: 42a0966e4138f4c46bb32cb9692b98ab, type: 3}
+      propertyPath: panel
+      value: 
+      objectReference: {fileID: 1797598370}
     - target: {fileID: 1174464554, guid: 42a0966e4138f4c46bb32cb9692b98ab, type: 3}
       propertyPath: m_Constraints
       value: 88

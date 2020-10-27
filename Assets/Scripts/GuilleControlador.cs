@@ -21,11 +21,14 @@ public class GuilleControlador : MonoBehaviour
     private Vector3 posInicial;
     public Text bugs;
 
+    public GameObject panel;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         posInicial = transform.position;
         avispa = GameObject.Find("wasp").GetComponent<Avispa1>();
+        panel.SetActive(false);
     }
     public void Awake()
     {
@@ -42,6 +45,7 @@ public class GuilleControlador : MonoBehaviour
         }
         if(other.gameObject.CompareTag("malo")){
             rb.gameObject.SetActive(false);
+            panel.SetActive(true);
             TerminarJuego(false ,contador);
         }
         if(other.gameObject.CompareTag("ganar")){
