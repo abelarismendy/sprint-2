@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class GuilleControlador : MonoBehaviour
@@ -74,7 +75,7 @@ public class GuilleControlador : MonoBehaviour
     }
 
     public void SalirAlMenu(){
-        print("menu");
+        SceneManager.LoadScene("Menu");
     }
 
     public void ReiniciarJuego(){
@@ -90,7 +91,6 @@ public class GuilleControlador : MonoBehaviour
         }
         GameOver.SetActive(false);
         GameFinished.SetActive(false);
-        print("reiniciar");
     }
     // Start is called before the first frame update
 
