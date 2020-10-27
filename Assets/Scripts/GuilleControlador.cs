@@ -13,13 +13,17 @@ public class GuilleControlador : MonoBehaviour
     public int totalBugs;
     public GameObject ganar;
     public GameObject[] insectos;
+    Avispa1 avispa;
     private int contador;
     private Rigidbody rb;
+    private Vector3 posInicial;
     public Text bugs;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        posInicial = transform.position;
+        avispa = GameObject.Find("wasp").GetComponent<Avispa1>();
     }
     public void Awake()
     {
@@ -64,8 +68,9 @@ public class GuilleControlador : MonoBehaviour
         contador = 0;
         bugs.text= "BUGS: "+ contador;
         rb.gameObject.SetActive(true);
-        transform.position = new Vector3(0.0f, transform.position.y, transform.position.z);
+        transform.position = posInicial;
         ganar.SetActive(false);
+        avispa.transform.position = avispa.posInicial;
         foreach (GameObject insecto in insectos)
         {
             insecto.SetActive(true);
@@ -106,7 +111,7 @@ public class GuilleControlador : MonoBehaviour
     }
 
     void LateUpdate(){
-        if (contador == totalBugs){
+        if (contador >= totalBugs){
             ganar.SetActive(true);
         }
     }
