@@ -12,6 +12,8 @@ public class GuilleControlador : MonoBehaviour
     public bool sobrePiso = true;
     public int totalBugs;
     public GameObject ganar;
+    
+    
     public GameObject[] insectos;
     Avispa1 avispa;
     private int contador;
@@ -108,6 +110,9 @@ public class GuilleControlador : MonoBehaviour
             rb.AddForce(Vector3.up*salto, ForceMode.Impulse);
             sobrePiso = false;
         }
+        
+
+
     }
 
     void LateUpdate(){
