@@ -34,6 +34,8 @@ public class GuilleControlador : MonoBehaviour
         posInicial = transform.position;
         avispa = GameObject.Find("wasp").GetComponent<Avispa1>();
         GameOver.SetActive(false);
+        GameFinished.SetActive(false);
+        sobrePiso = true;
         GameObject restart = GameOver.transform.GetChild(1).gameObject;
         Button btnRestart = restart.GetComponent<Button>();
 		btnRestart.onClick.AddListener(ReiniciarJuego);
@@ -95,6 +97,7 @@ public class GuilleControlador : MonoBehaviour
         inst.text = instrucciones;
         contador = 0;
         bugs.text= "BUGS: "+ contador;
+        sobrePiso = true;
         rb.gameObject.SetActive(true);
         transform.position = posInicial;
         ganar.SetActive(false);
