@@ -19,10 +19,13 @@ public class GuilleControlador : MonoBehaviour
     private Rigidbody rb;
     private Vector3 posInicial;
     public Text bugs;
+    public Text inst;
 
     public GameObject GameFinished;
     public GameObject GameOver;
     private bool choque;
+    private string instrucciones;
+    private float tiempoAnterior;
 
     void Start()
     {
@@ -42,7 +45,7 @@ public class GuilleControlador : MonoBehaviour
         GameObject finish2 = GameFinished.transform.GetChild(2).gameObject;
         Button btnFinish2 = finish2.GetComponent<Button>();
         btnFinish2.onClick.AddListener(SalirAlMenu);
-
+        instrucciones = inst.text;
     }
     public void Awake()
     {
@@ -67,6 +70,7 @@ public class GuilleControlador : MonoBehaviour
     }
 
     public void TerminarJuego(bool gano){
+        tiempoAnterior = Time.time;
         if (gano){
             Time.timeScale = 0;
             GameFinished.SetActive(true);
@@ -83,6 +87,7 @@ public class GuilleControlador : MonoBehaviour
 
     public void ReiniciarJuego(){
         Time.timeScale = 1;
+        inst.text = instrucciones;
         contador = 0;
         bugs.text= "BUGS: "+ contador;
         rb.gameObject.SetActive(true);
@@ -110,6 +115,10 @@ public class GuilleControlador : MonoBehaviour
         {
             Time.timeScale = 1;
         }
+    }
+    if (Time.time - tiempoAnterior > 5)
+    {
+        inst.text = "";
     }
     }
 
