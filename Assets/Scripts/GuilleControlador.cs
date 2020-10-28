@@ -86,6 +86,7 @@ public class GuilleControlador : MonoBehaviour
     }
 
     public void SalirAlMenu(){
+        ReiniciarJuego();
         SceneManager.LoadScene("Menu");
     }
 
