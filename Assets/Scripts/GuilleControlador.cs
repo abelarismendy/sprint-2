@@ -36,9 +36,12 @@ public class GuilleControlador : MonoBehaviour
         GameObject restart2 = GameFinished.transform.GetChild(1).gameObject;
         Button btnRestart2 = restart2.GetComponent<Button>();
 		btnRestart2.onClick.AddListener(ReiniciarJuego);
-        GameObject finish = GameFinished.transform.GetChild(2).gameObject;
+        GameObject finish = GameOver.transform.GetChild(2).gameObject;
         Button btnFinish = finish.GetComponent<Button>();
         btnFinish.onClick.AddListener(SalirAlMenu);
+        GameObject finish2 = GameFinished.transform.GetChild(2).gameObject;
+        Button btnFinish2 = finish2.GetComponent<Button>();
+        btnFinish2.onClick.AddListener(SalirAlMenu);
 
     }
     public void Awake()
