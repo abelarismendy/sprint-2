@@ -59,13 +59,13 @@ public class GuilleControlador : MonoBehaviour
             TerminarJuego(false);
         }
         if(other.gameObject.CompareTag("ganar")){
-            rb.gameObject.SetActive(false);
             TerminarJuego(true);
         }
     }
 
     public void TerminarJuego(bool gano){
         if (gano){
+            Time.timeScale = 0;
             GameFinished.SetActive(true);
         }
         else {
@@ -79,6 +79,7 @@ public class GuilleControlador : MonoBehaviour
     }
 
     public void ReiniciarJuego(){
+        Time.timeScale = 1;
         contador = 0;
         bugs.text= "BUGS: "+ contador;
         rb.gameObject.SetActive(true);
@@ -93,6 +94,21 @@ public class GuilleControlador : MonoBehaviour
         GameFinished.SetActive(false);
     }
     // Start is called before the first frame update
+
+    void Update()
+    {
+    if (Input.GetKeyDown(KeyCode.P))
+    {
+        if (Time.timeScale == 1)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
+    }
+    }
 
     // Update is called once per frame
     void FixedUpdate()
