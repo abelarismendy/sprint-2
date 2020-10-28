@@ -54,6 +54,8 @@ public class GuilleControlador : MonoBehaviour
     {
         contador = 0;
         bugs.text= "BUGS: "+ contador;
+        instrucciones = inst.text;
+
     }
 
     public void OnTriggerEnter(Collider other)
@@ -89,6 +91,7 @@ public class GuilleControlador : MonoBehaviour
 
     public void SalirAlMenu(){
         ReiniciarJuego();
+        inst.text = instrucciones;
         SceneManager.LoadScene("Menu");
     }
 

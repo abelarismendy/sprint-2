@@ -922,7 +922,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1437878049}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -964,7 +964,10 @@ MonoBehaviour:
   m_Text: 'ATRAPA TODOS LOS BUGS PARA TERMINAR LA POCION.
 
     TEN CUIDADO CON LOS
-    BICHOS MALOS.'
+    BICHOS MALOS.
+
+    CONTROLES: FLECHAS PARA MOVERSE, SALTA CON ESPACIO, PAUSA
+    CON "P"'
 --- !u!222 &90026652
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15201,10 +15204,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 90026650}
   - {fileID: 1758157859}
   - {fileID: 1797598371}
   - {fileID: 2034798352}
-  - {fileID: 90026650}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18399,7 +18402,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1437878049}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -18921,7 +18924,7 @@ RectTransform:
   - {fileID: 504533394}
   - {fileID: 1969021045}
   m_Father: {fileID: 1437878049}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -21051,7 +21054,7 @@ RectTransform:
   - {fileID: 1567894207}
   - {fileID: 750709997}
   m_Father: {fileID: 1437878049}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
