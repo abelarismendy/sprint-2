@@ -26,6 +26,7 @@ public class GuilleControlador : MonoBehaviour
     private bool choque;
     private string instrucciones;
     private float tiempoAnterior;
+    public AudioSource sound;
 
     void Start()
     {
@@ -72,10 +73,13 @@ public class GuilleControlador : MonoBehaviour
     public void TerminarJuego(bool gano){
         tiempoAnterior = Time.time;
         if (gano){
+            inst.text = "";
+            sound.Play();
             Time.timeScale = 0;
             GameFinished.SetActive(true);
         }
         else {
+            inst.text = instrucciones;
             GameOver.SetActive(true);
         }
 
